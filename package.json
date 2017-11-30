@@ -1,0 +1,39 @@
+{
+  "name": "param-validation",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha  test/unit/**/**/**/**/*.test.js",
+    "cover": "nyc --all --reporter=lcov npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RaianRaika/param-validation"
+  },
+  "author": "Amin.Aghabeiki",
+  "contributors": [
+    {
+      "name": "Amin Aghabeiki",
+      "email": "amin.aghabeiki@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RaianRaika/param-validation/issues"
+  },
+  "homepage": "https://github.com/RaianRaika/param-validation#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "nyc": "^11.3.0",
+    "sails": "^0.12.14",
+    "sails-memory": "^0.10.7",
+    "should": "^13.1.3",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "google-libphonenumber": "^3.0.8",
+    "lodash": "^4.17.4",
+    "url-pattern": "^1.0.3"
+  }
+}

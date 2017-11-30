@@ -1,0 +1,7 @@
+{
+  "test": {
+    "url": "/testComplex",
+    "method": "get",
+    "body": {}
+  }
+}

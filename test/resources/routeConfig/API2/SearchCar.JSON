@@ -1,0 +1,39 @@
+{
+  "URL": "/car/search",
+  "METHOD": "post",
+  "NAMESPACE": "Search for rental car availability for the specified location and time",
+  "BODY": {
+    "searchParam": {
+      "driverAge": {
+        "type": "number",
+        "min": 25,
+        "max": 100
+      },
+      "pickUp": {
+        "locationId": {
+          "type": "number|string",
+          "minLength": 2,
+          "maxLength": 3
+        },
+        "datetime": {
+          "type": "date"
+        }
+      },
+      "dropOff": {
+        "locationId": {
+          "type": "number|string",
+          "minLength": 2,
+          "maxLength": 3,
+          "required": false
+        },
+        "datetime": {
+          "type": "date"
+        }
+      },
+      "currency": {
+        "type": "string",
+        "regex64": "XGJbQS1aXXszLH1cYg=="
+      }
+    }
+  }
+}

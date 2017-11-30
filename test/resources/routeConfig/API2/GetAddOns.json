@@ -1,0 +1,7 @@
+{
+  "URL": "/car/addons",
+  "METHOD": "get",
+  "NAMESPACE": "Returns a list of available add ons for the specified vehicle.",
+  "BODY": {
+  }
+}

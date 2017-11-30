@@ -1,0 +1,10 @@
+{
+  "URL": "/car/payment/",
+  "METHOD": "get",
+  "NAMESPACE": "Returns a list of available payment methods for the location.",
+  "BODY": {
+    "locationId": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "URL": "/car/vehicle",
+  "METHOD": "post",
+  "NAMESPACE": "Adds the user selected vehicle to a booking.",
+  "BODY": {
+    "vehicleId": {
+      "type": "number"
+    },
+    "price": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "pickUp": {
+      "locationId": {
+        "type": "number"
+      },
+      "datetime": {
+        "type": "date"
+      }
+    },
+    "dropOff": {
+      "locationId": {
+        "type": "number"
+      },
+      "datetime": {
+        "type": "date"
+      }
+    }
+  }
+}

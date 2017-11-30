@@ -1,0 +1,6 @@
+{
+  "URL": "/car/addons",
+  "METHOD": "POST",
+  "NAMESPACE": "Adds user selected addons to a booking",
+  "SCRIPT":"./script/AddCarAddOns.js"
+}

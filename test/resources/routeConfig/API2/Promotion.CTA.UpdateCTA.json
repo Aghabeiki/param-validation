@@ -1,0 +1,6 @@
+{
+  "URL": "/CTA",
+  "METHOD": "put",
+  "NAMESPACE": "update existing CTA(s)",
+  "SCRIPT": "./script/Promotion.CTA.UpdateCTA.js"
+}

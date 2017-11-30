@@ -1,0 +1,32 @@
+{
+  "/companions": {
+    "post": {
+      "TITLE": "Companions",
+      "URL": "/companions",
+      "METHOD": "post",
+      "NAMESPACE": "get airline call center",
+      "BODY": {}
+    },
+    "put": {
+      "TITLE": "Companions",
+      "URL": "/companions",
+      "METHOD": "put",
+      "NAMESPACE": "get airline call center",
+      "BODY": {}
+    },
+    "delete": {
+      "TITLE": "Companions",
+      "URL": "/companions",
+      "METHOD": "delete",
+      "NAMESPACE": "get airline call center",
+      "BODY": {}
+    },
+    "get": {
+      "TITLE": "Companions",
+      "URL": "/companions",
+      "METHOD": "get",
+      "NAMESPACE": "get airline call center",
+      "BODY": {}
+    }
+  }
+}

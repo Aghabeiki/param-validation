@@ -1,0 +1,7 @@
+{
+  "URL": "/car/summery",
+  "METHOD": "get",
+  "NAMESPACE": "get the rentCar summery status/",
+  "BODY": {
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "URL": "/promotion",
+  "METHOD": "GET",
+  "NAMESPACE": "get promotion List",
+  "SCRIPT": "./script/Promotions.GetPromotionList.js"
+}

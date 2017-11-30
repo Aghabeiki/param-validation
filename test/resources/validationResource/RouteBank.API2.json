@@ -1,0 +1,465 @@
+{
+  "/car/addons": {
+    "post": {
+      "URL": "/car/addons",
+      "METHOD": "POST",
+      "NAMESPACE": "Adds user selected addons to a booking",
+      "SCRIPT": "./script/AddCarAddOns.js"
+    },
+    "get": {
+      "URL": "/car/addons",
+      "METHOD": "get",
+      "NAMESPACE": "Returns a list of available add ons for the specified vehicle.",
+      "BODY": {}
+    }
+  },
+  "/car/driver": {
+    "post": {
+      "URL": "/car/driver",
+      "METHOD": "post",
+      "NAMESPACE": "Adds driver information to a booking.",
+      "BODY": {
+        "driverInfo": {
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 3,
+            "required": false
+          },
+          "driverAge": {
+            "type": "number",
+            "min": 25
+          },
+          "address": {
+            "city": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string",
+              "maxLength": 2
+            },
+            "postcode": {
+              "type": "string"
+            },
+            "street": {
+              "type": "string"
+            }
+          },
+          "email": {
+            "type": "email"
+          },
+          "telephone": {
+            "type": "phone",
+            "required": false
+          },
+          "fax": {
+            "type": "phone",
+            "required": false
+          }
+        }
+      }
+    }
+  },
+  "/car/payment": {
+    "get": {
+      "URL": "/car/payment/",
+      "METHOD": "get",
+      "NAMESPACE": "Returns a list of available payment methods for the location.",
+      "BODY": {
+        "locationId": {
+          "type": "string"
+        }
+      }
+    },
+    "post": {
+      "URL": "/car/payment",
+      "METHOD": "post",
+      "NAMESPACE": "Make payment for the booking created",
+      "BODY": {
+        "payment": {
+          "paymentId": {
+            "type": "number"
+          },
+          "depositPayment": {
+            "type": "boolean"
+          },
+          "cardNumber": {
+            "type": "string",
+            "minLength": 12,
+            "maxLength": 19
+          },
+          "cvv": {
+            "type": "string"
+          },
+          "expirationDate": {
+            "type": "string"
+          },
+          "cardHolder": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "/car/terms": {
+    "get": {
+      "URL": "/car/terms/",
+      "METHOD": "get",
+      "NAMESPACE": "Returns a list of rental term sections for the specified location.",
+      "BODY": {
+        "locationId": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "/holidays/:countryiso/:year/:month": {
+    "get": {
+      "URL": "/holidays/:CountryISO/:year/:month",
+      "METHOD": "GET",
+      "NAMESPACE": "get Holidays for a specific country ",
+      "SCRIPT": "./script/GetHolidays.js"
+    }
+  },
+  "/holidays/:countryiso/:year": {
+    "get": {
+      "URL": "/holidays/:CountryISO/:year",
+      "METHOD": "GET",
+      "NAMESPACE": "get Holidays for a specific country ",
+      "SCRIPT": "./script/GetHolidays.js"
+    }
+  },
+  "/holidays/:countryiso/:year/:month/:day": {
+    "get": {
+      "URL": "/holidays/:CountryISO/:year/:month/:day",
+      "METHOD": "GET",
+      "NAMESPACE": "get Holidays for a specific country ",
+      "SCRIPT": "./script/GetHolidays.js"
+    }
+  },
+  "/holidays/:countryiso/:startyear/:startmonth/:startday/:endyear/:endmonth/:endday": {
+    "get": {
+      "URL": "/holidays/:CountryISO/:startYear/:startMonth/:startDay/:endYear/:endMonth/:endDay",
+      "METHOD": "GET",
+      "NAMESPACE": "get Holidays for a specific country ",
+      "SCRIPT": "./script/GetHolidays.js"
+    }
+  },
+  "/cta": {
+    "delete": {
+      "URL": "/CTA",
+      "METHOD": "delete",
+      "NAMESPACE": "delete existing CTA(s)",
+      "BODY": {
+        "CTA_ID": {
+          "type": "array",
+          "rows": {
+            "type": "number",
+            "min": 1
+          }
+        }
+      }
+    },
+    "get": {
+      "URL": "/CTA",
+      "METHOD": "get",
+      "NAMESPACE": "get existing CTA(s)",
+      "SCRIPT": "./script/Promotion.CTA.GetCTAList.js"
+    },
+    "post": {
+      "URL": "/CTA",
+      "METHOD": "post",
+      "NAMESPACE": "create a new CTA",
+      "SCRIPT": "./script/Promotion.CTA.NewCTA.js"
+    },
+    "put": {
+      "URL": "/CTA",
+      "METHOD": "put",
+      "NAMESPACE": "update existing CTA(s)",
+      "SCRIPT": "./script/Promotion.CTA.UpdateCTA.js"
+    }
+  },
+  "/promotion": {
+    "delete": {
+      "URL": "/promotion",
+      "METHOD": "delete",
+      "NAMESPACE": "delete a promotion",
+      "BODY": {
+        "promotion_ids": {
+          "type": "array|number",
+          "rows": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "put": {
+      "URL": "/promotion",
+      "METHOD": "put",
+      "NAMESPACE": "update a promotion",
+      "BODY": {
+        "promotion_id": {
+          "type": "number"
+        },
+        "status": {
+          "type": "number",
+          "min": 1,
+          "max": 4,
+          "required": false
+        },
+        "date_from": {
+          "type": "date",
+          "required": false,
+          "regex64": "XihbMS0yXSkoWzAtOV0pKFswLTldKShbMC05XSkoLSkoMFsxLTldfDFbMC0yXSkoLSkoMFsxLTldfDFbMC05XXwyWzAtOV18M1swLTFdKShUKSgwWzAtOV18MVswLTldfDJbMC0zXSkoOikoMFswLTldfDFbMC05XXwyWzAtOV18M1swLTldfDRbMC05XXw1WzAtOV0pKFwrfFwtKShcZFxkXDpcZFxkKQ==",
+          "compareWithFiled": [
+            "<:date_to"
+          ]
+        },
+        "date_to": {
+          "type": "date",
+          "required": false,
+          "regex64": "XihbMS0yXSkoWzAtOV0pKFswLTldKShbMC05XSkoLSkoMFsxLTldfDFbMC0yXSkoLSkoMFsxLTldfDFbMC05XXwyWzAtOV18M1swLTFdKShUKSgwWzAtOV18MVswLTldfDJbMC0zXSkoOikoMFswLTldfDFbMC05XXwyWzAtOV18M1swLTldfDRbMC05XXw1WzAtOV0pKFwrfFwtKShcZFxkXDpcZFxkKQ==",
+          "compareWithFiled": [
+            ">:date_from"
+          ]
+        },
+        "position": {
+          "type": "number",
+          "required": false
+        },
+        "category": {
+          "type": "string",
+          "required": false
+        },
+        "details": {
+          "type": "array",
+          "required": false,
+          "rows": {
+            "type": "object",
+            "body": {
+              "detail_id": {
+                "type": "number",
+                "null-allowed": true
+              },
+              "language": {
+                "type": "string",
+                "required": false,
+                "regex64": "XlthLXpBLVpdezIsM30oWy1cL11bYS16QS1aXXsyLDN9KT8k",
+                "length": 5
+              },
+              "title": {
+                "type": "string",
+                "required": false,
+                "maxLength": 1024
+              },
+              "subtitle": {
+                "type": "string",
+                "required": false,
+                "maxLength": 1024
+              },
+              "description": {
+                "type": "string",
+                "required": false
+              },
+              "banner_main": {
+                "type": "string",
+                "required": false
+              },
+              "banner_details": {
+                "type": "string",
+                "required": false
+              },
+              "CTA": {
+                "type": "number",
+                "required": false,
+                "null-allowed": true
+              },
+              "channel": {
+                "type": "string",
+                "required": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "get": {
+      "URL": "/promotion",
+      "METHOD": "GET",
+      "NAMESPACE": "get promotion List",
+      "SCRIPT": "./script/Promotions.GetPromotionList.js"
+    },
+    "post": {
+      "URL": "/promotion",
+      "METHOD": "post",
+      "NAMESPACE": "create a new promotion",
+      "BODY": {
+        "status": {
+          "type": "number",
+          "min": 1,
+          "max": 4
+        },
+        "date_from": {
+          "type": "date",
+          "regex64": "XihbMS0yXSkoWzAtOV0pKFswLTldKShbMC05XSkoLSkoMFsxLTldfDFbMC0yXSkoLSkoMFsxLTldfDFbMC05XXwyWzAtOV18M1swLTFdKShUKSgwWzAtOV18MVswLTldfDJbMC0zXSkoOikoMFswLTldfDFbMC05XXwyWzAtOV18M1swLTldfDRbMC05XXw1WzAtOV0pKFwrfFwtKSgoMFswLTldfDFbMC05XSk6XGRcZCk=",
+          "compareWithFiled": [
+            "<:date_to"
+          ]
+        },
+        "date_to": {
+          "type": "date",
+          "regex64": "XihbMS0yXSkoWzAtOV0pKFswLTldKShbMC05XSkoLSkoMFsxLTldfDFbMC0yXSkoLSkoMFsxLTldfDFbMC05XXwyWzAtOV18M1swLTFdKShUKSgwWzAtOV18MVswLTldfDJbMC0zXSkoOikoMFswLTldfDFbMC05XXwyWzAtOV18M1swLTldfDRbMC05XXw1WzAtOV0pKFwrfFwtKSgoMFswLTldfDFbMC05XSk6XGRcZCk=",
+          "compareWithFiled": [
+            ">:date_from"
+          ]
+        },
+        "position": {
+          "type": "number",
+          "required": false
+        },
+        "category": {
+          "type": "string",
+          "required": false
+        },
+        "details": {
+          "type": "array",
+          "rows": {
+            "type": "object",
+            "body": {
+              "language": {
+                "type": "string",
+                "regex64": "XlthLXpBLVpdezIsM30oWy1cL11bYS16QS1aXXsyLDN9KT8k",
+                "length": 5
+              },
+              "title": {
+                "type": "string",
+                "maxLength": 1024
+              },
+              "subtitle": {
+                "type": "string",
+                "maxLength": 1024
+              },
+              "description": {
+                "type": "string"
+              },
+              "banner_main": {
+                "type": "string"
+              },
+              "banner_details": {
+                "type": "string"
+              },
+              "CTA": {
+                "type": "number",
+                "required": false
+              },
+              "channel": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "/promotion(/:promotionid)": {
+    "get": {
+      "URL": "/promotion(/:promotionID)",
+      "METHOD": "GET",
+      "NAMESPACE": "get promotion details",
+      "BODY": {
+        "promotionID": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "/car/summery": {
+    "get": {
+      "URL": "/car/summery",
+      "METHOD": "get",
+      "NAMESPACE": "get the rentCar summery status/",
+      "BODY": {}
+    }
+  },
+  "/car/search": {
+    "post": {
+      "URL": "/car/search",
+      "METHOD": "post",
+      "NAMESPACE": "Search for rental car availability for the specified location and time",
+      "BODY": {
+        "searchParam": {
+          "driverAge": {
+            "type": "number",
+            "min": 25,
+            "max": 100
+          },
+          "pickUp": {
+            "locationId": {
+              "type": "number|string",
+              "minLength": 2,
+              "maxLength": 3
+            },
+            "datetime": {
+              "type": "date"
+            }
+          },
+          "dropOff": {
+            "locationId": {
+              "type": "number|string",
+              "minLength": 2,
+              "maxLength": 3,
+              "required": false
+            },
+            "datetime": {
+              "type": "date"
+            }
+          },
+          "currency": {
+            "type": "string",
+            "regex64": "XGJbQS1aXXszLH1cYg=="
+          }
+        }
+      }
+    }
+  },
+  "/car/vehicle": {
+    "post": {
+      "URL": "/car/vehicle",
+      "METHOD": "post",
+      "NAMESPACE": "Adds the user selected vehicle to a booking.",
+      "BODY": {
+        "vehicleId": {
+          "type": "number"
+        },
+        "price": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "pickUp": {
+          "locationId": {
+            "type": "number"
+          },
+          "datetime": {
+            "type": "date"
+          }
+        },
+        "dropOff": {
+          "locationId": {
+            "type": "number"
+          },
+          "datetime": {
+            "type": "date"
+          }
+        }
+      }
+    }
+  }
+}

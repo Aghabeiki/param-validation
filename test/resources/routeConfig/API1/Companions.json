@@ -1,0 +1,32 @@
+{
+  "Companions": [
+    {
+      "TITLE": "Companions",
+      "URL": "/companions",
+      "METHOD": "post",
+      "NAMESPACE": "create companions",
+      "SCRIPT": "./script/Companions.post.js"
+    },
+    {
+      "TITLE": "Companions",
+      "URL": "/companions",
+      "METHOD": "put",
+      "NAMESPACE": "update companions information",
+      "SCRIPT": "./script/Companions.put.js"
+    },
+    {
+      "TITLE": "Companions",
+      "URL": "/companions",
+      "METHOD": "delete",
+      "NAMESPACE": "delete companion information",
+      "SCRIPT": "./script/Companions.delete.js"
+    },
+    {
+      "TITLE": "Companions",
+      "URL": "/companions",
+      "METHOD": "get",
+      "NAMESPACE": "get companions",
+      "BODY": {}
+    }
+  ]
+}

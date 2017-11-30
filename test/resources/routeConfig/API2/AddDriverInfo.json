@@ -1,0 +1,51 @@
+{
+  "URL": "/car/driver",
+  "METHOD": "post",
+  "NAMESPACE": "Adds driver information to a booking.",
+  "BODY": {
+    "driverInfo": {
+      "firstname": {
+        "type": "string"
+      },
+      "lastname": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 3,
+        "required": false
+      },
+      "driverAge": {
+        "type": "number",
+        "min": 25
+      },
+      "address": {
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string",
+          "maxLength": 2
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "street": {
+          "type": "string"
+        }
+      },
+      "email": {
+        "type": "email"
+      },
+      "telephone": {
+        "type": "phone",
+        "required": false
+      },
+      "fax": {
+        "type": "phone",
+        "required": false
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "/airlines/:airline_code": {
+    "get": {
+      "TITLE": "Get Airline",
+      "URL": "/airlines/:airline_code",
+      "METHOD": "get",
+      "NAMESPACE": "Get Airline details",
+      "SCRIPT": "./script/Airlines.GetAirline.js"
+    }
+  },
+  "/airlines": {
+    "get": {
+      "TITLE": "Get All Airlines",
+      "URL": "/airlines",
+      "METHOD": "get",
+      "NAMESPACE": "Get All Airlines",
+      "SCRIPT": "./script/Airlines.GetAllAirlines.js"
+    }
+  },
+  "/airlines/:airline_code/office": {
+    "get": {
+      "TITLE": "Offices",
+      "URL": "/airlines/:airline_code/office",
+      "METHOD": "GET",
+      "NAMESPACE": "Get Airlines Office Details",
+      "SCRIPT": "./script/Airlines.Offices.js"
+    }
+  },
+  "/airlines/:airline_code/representative2": {
+    "get": {
+      "TITLE": "Representative2",
+      "URL": "/airlines/:airline_code/representative2",
+      "METHOD": "GET",
+      "NAMESPACE": "Get Airline representative2 details",
+      "SCRIPT": "./script/Airlines.Representative.js"
+    }
+  },
+  "/airlines/:airline_code/representative": {
+    "get": {
+      "TITLE": "Representative",
+      "URL": "/airlines/:airline_code/representative",
+      "METHOD": "GET",
+      "NAMESPACE": "Get Airline representative details",
+      "SCRIPT": "./script/Airlines.Representative.js"
+    }
+  },
+  "/airlines/:airline_code/callcenter": {
+    "get": {
+      "TITLE": "Call Center",
+      "URL": "/airlines/:airline_code/callcenter",
+      "METHOD": "GET",
+      "NAMESPACE": "get airline call center",
+      "SCRIPT": "./script/Airlines.CallCenter.js"
+    }
+  }
+}

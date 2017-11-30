@@ -1,0 +1,351 @@
+{
+  "/airports(/:country_code)": {
+    "get": {
+      "URL": "/airports(/:country_code)",
+      "METHOD": "GET",
+      "BODY": {
+        "country_code": {
+          "type": "string",
+          "length": 2,
+          "required": false
+        }
+      }
+    }
+  },
+  "/booking(/:pnr)": {
+    "get": {
+      "URL": "/booking(/:pnr)",
+      "METHOD": "get",
+      "SCRIPT": "./script/Booking.js"
+    }
+  },
+  "/bookings": {
+    "get": {
+      "URL": "/bookings",
+      "METHOD": "get",
+      "SCRIPT": "./script/Bookings.js"
+    }
+  },
+  "/companions": {
+    "post": {
+      "TITLE": "Companions",
+      "URL": "/companions",
+      "METHOD": "post",
+      "NAMESPACE": "create companions",
+      "SCRIPT": "./script/Companions.post.js"
+    },
+    "put": {
+      "TITLE": "Companions",
+      "URL": "/companions",
+      "METHOD": "put",
+      "NAMESPACE": "update companions information",
+      "SCRIPT": "./script/Companions.put.js"
+    },
+    "delete": {
+      "TITLE": "Companions",
+      "URL": "/companions",
+      "METHOD": "delete",
+      "NAMESPACE": "delete companion information",
+      "SCRIPT": "./script/Companions.delete.js"
+    },
+    "get": {
+      "TITLE": "Companions",
+      "URL": "/companions",
+      "METHOD": "get",
+      "NAMESPACE": "get companions",
+      "BODY": {}
+    }
+  },
+  "/flight/schedule/:airline_code/:origin/:destination": {
+    "get": {
+      "URL": "/flight/schedule/:airline_code/:origin/:destination",
+      "METHOD": "get",
+      "SCRIPT": "./script/Flights.schedule.js"
+    }
+  },
+  "/flight/schedule/:airline_code/:origin/:destination/:departure_month/:departure_day": {
+    "get": {
+      "URL": "/flight/schedule/:airline_code/:origin/:destination/:departure_month/:departure_day",
+      "METHOD": "get",
+      "SCRIPT": "./script/Flights.schedule.js"
+    }
+  },
+  "/flight/status": {
+    "post": {
+      "URL": "/flight/status",
+      "METHOD": "post",
+      "BODY": {}
+    }
+  },
+  "/flight/booking/:carrier_code/:pnr": {
+    "get": {
+      "URL": "/flight/booking/:carrier_code/:pnr",
+      "METHOD": "get",
+      "SCRIPT": "./script/Flights.booking.js"
+    }
+  },
+  "/pns/booking": {
+    "post": {
+      "URL": "/pns/booking",
+      "METHOD": "post",
+      "SCRIPT": "./script/PNS.booking.post.js"
+    }
+  },
+  "/pns/device": {
+    "post": {
+      "URL": "/pns/device",
+      "METHOD": "post",
+      "SCRIPT": "./script/PNS.device.post.js"
+    },
+    "put": {
+      "URL": "/pns/device",
+      "METHOD": "put",
+      "SCRIPT": "./script/PNS.device.put.js"
+    }
+  },
+  "/pns/validator": {
+    "post": {
+      "URL": "/pns/validator",
+      "METHOD": "post",
+      "BODY": {
+        "pushNotificationRules": {
+          "type": "object",
+          "body": {
+            "priority": {
+              "type": "number",
+              "min": 0,
+              "max": 2
+            },
+            "status": {
+              "type": "number",
+              "min": 0,
+              "max": 1
+            },
+            "name": {
+              "type": "string"
+            },
+            "rules": {
+              "type": "object",
+              "body": {}
+            },
+            "content": {
+              "type": "object",
+              "body": {}
+            },
+            "target-time": {
+              "type": "object",
+              "body": {
+                "start_date": {
+                  "type": "date"
+                },
+                "end_date": {
+                  "type": "date"
+                },
+                "frequency": {
+                  "type": "number",
+                  "min": 300
+                },
+                "limit_per_user": {
+                  "type": "number",
+                  "min": 1
+                },
+                "push_local_time": {
+                  "type": "string",
+                  "required": false,
+                  "regex64": "XigyWzAtM118WzAxXT9bMC05XSk6KFswLTVdezF9WzAtOV0pJA=="
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "/pns": {
+    "post": {
+      "URL": "/pns",
+      "METHOD": "post",
+      "BODY": {
+        "pushNotificationRules": {
+          "type": "object",
+          "body": {
+            "priority": {
+              "type": "number",
+              "min": 0,
+              "max": 2
+            },
+            "status": {
+              "type": "number",
+              "min": 0,
+              "max": 1
+            },
+            "name": {
+              "type": "string"
+            },
+            "rules": {
+              "type": "object",
+              "body": {}
+            },
+            "content": {
+              "type": "object",
+              "body": {}
+            },
+            "target-time": {
+              "type": "object",
+              "body": {
+                "start_date": {
+                  "type": "date"
+                },
+                "end_date": {
+                  "type": "date"
+                },
+                "frequency": {
+                  "type": "number",
+                  "min": 300
+                },
+                "limit_per_user": {
+                  "type": "number",
+                  "min": 1
+                },
+                "push_local_time": {
+                  "type": "string",
+                  "required": false,
+                  "regex64": "XigyWzAtM118WzAxXT9bMC05XSk6KFswLTVdezF9WzAtOV0pJA=="
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "/pns/rules": {
+    "get": {
+      "URL": "/pns/rules",
+      "METHOD": "get",
+      "BODY": {}
+    },
+    "post": {
+      "URL": "/pns/rules",
+      "METHOD": "post",
+      "SCRIPT": "./script/PNS.newPushNotifyRule.new.js"
+    }
+  },
+  "/pns/messages": {
+    "get": {
+      "URL": "/pns/messages",
+      "METHOD": "get",
+      "BODY": {}
+    },
+    "post": {
+      "URL": "/pns/messages",
+      "METHOD": "post",
+      "SCRIPT": "./script/PNS.newMessageStructure.new.js"
+    }
+  },
+  "/pns/messages(/:id)": {
+    "put": {
+      "URL": "/pns/messages(/:id)",
+      "METHOD": "put",
+      "SCRIPT": "./script/PNS.UpdateMessageStructure.put.js"
+    },
+    "delete": {
+      "URL": "/pns/messages(/:id)",
+      "METHOD": "delete",
+      "BODY": {
+        "id": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "/pns/rules(/:id)": {
+    "put": {
+      "URL": "/pns/rules(/:id)",
+      "METHOD": "put",
+      "SCRIPT": "./script/PNS.UpdateNotifyRules.put.js"
+    },
+    "delete": {
+      "URL": "/pns/rules(/:id)",
+      "METHOD": "delete",
+      "BODY": {
+        "id": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "/airlines/:airline_code/callcenter": {
+    "get": {
+      "TITLE": "Call Center",
+      "URL": "/airlines/:airline_code/callcenter",
+      "METHOD": "GET",
+      "NAMESPACE": "get airline call center",
+      "BODY": {}
+    }
+  },
+  "/airlines/:airline_code": {
+    "get": {
+      "TITLE": "Get Airline",
+      "URL": "/airlines/:airline_code",
+      "METHOD": "get",
+      "NAMESPACE": "Get Airline details",
+      "BODY": {}
+    }
+  },
+  "/airlines": {
+    "get": {
+      "TITLE": "Get All Airlines",
+      "URL": "/airlines",
+      "METHOD": "get",
+      "NAMESPACE": "Get All Airlines",
+      "BODY": {}
+    }
+  },
+  "/airlines/:airline_code/office": {
+    "get": {
+      "TITLE": "Offices",
+      "URL": "/airlines/:airline_code/office",
+      "METHOD": "GET",
+      "NAMESPACE": "Get Airlines Office Details",
+      "BODY": {}
+    }
+  },
+  "/airlines/:airline_code/representative": {
+    "get": {
+      "TITLE": "Representative",
+      "URL": "/airlines/:airline_code/representative",
+      "METHOD": "GET",
+      "NAMESPACE": "Get Airline representative details",
+      "BODY": {}
+    }
+  },
+  "/countries": {
+    "get": {
+      "URL": "/countries",
+      "METHOD": "get",
+      "BODY": {}
+    }
+  },
+  "/countries/:country_code": {
+    "get": {
+      "URL": "/countries/:country_code",
+      "METHOD": "get",
+      "BODY": {}
+    }
+  },
+  "/currencies": {
+    "get": {
+      "URL": "/currencies",
+      "METHOD": "get",
+      "BODY": {}
+    }
+  },
+  "/currencies/:currency_code": {
+    "get": {
+      "URL": "/currencies/:currency_code",
+      "METHOD": "get",
+      "BODY": {}
+    }
+  }
+}

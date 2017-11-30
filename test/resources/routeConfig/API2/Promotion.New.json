@@ -1,0 +1,71 @@
+{
+  "URL": "/promotion",
+  "METHOD": "post",
+  "NAMESPACE": "create a new promotion",
+  "BODY": {
+    "status": {
+      "type": "number",
+      "min": 1,
+      "max": 4
+    },
+    "date_from": {
+      "type": "date",
+      "regex64": "XihbMS0yXSkoWzAtOV0pKFswLTldKShbMC05XSkoLSkoMFsxLTldfDFbMC0yXSkoLSkoMFsxLTldfDFbMC05XXwyWzAtOV18M1swLTFdKShUKSgwWzAtOV18MVswLTldfDJbMC0zXSkoOikoMFswLTldfDFbMC05XXwyWzAtOV18M1swLTldfDRbMC05XXw1WzAtOV0pKFwrfFwtKSgoMFswLTldfDFbMC05XSk6XGRcZCk=",
+      "compareWithFiled": [
+        "<:date_to"
+      ]
+    },
+    "date_to": {
+      "type": "date",
+      "regex64": "XihbMS0yXSkoWzAtOV0pKFswLTldKShbMC05XSkoLSkoMFsxLTldfDFbMC0yXSkoLSkoMFsxLTldfDFbMC05XXwyWzAtOV18M1swLTFdKShUKSgwWzAtOV18MVswLTldfDJbMC0zXSkoOikoMFswLTldfDFbMC05XXwyWzAtOV18M1swLTldfDRbMC05XXw1WzAtOV0pKFwrfFwtKSgoMFswLTldfDFbMC05XSk6XGRcZCk=",
+      "compareWithFiled": [
+        ">:date_from"
+      ]
+    },
+    "position": {
+      "type": "number",
+      "required": false
+    },
+    "category": {
+      "type": "string",
+      "required": false
+    },
+    "details": {
+      "type": "array",
+      "rows": {
+        "type": "object",
+        "body": {
+          "language": {
+            "type": "string",
+            "regex64": "XlthLXpBLVpdezIsM30oWy1cL11bYS16QS1aXXsyLDN9KT8k",
+            "length": 5
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "subtitle": {
+            "type": "string",
+            "maxLength": 1024
+          },
+          "description": {
+            "type": "string"
+          },
+          "banner_main": {
+            "type": "string"
+          },
+          "banner_details": {
+            "type": "string"
+          },
+          "CTA": {
+            "type": "number",
+            "required": false
+          },
+          "channel": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

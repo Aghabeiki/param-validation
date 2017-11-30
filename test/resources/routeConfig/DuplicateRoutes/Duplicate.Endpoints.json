@@ -1,0 +1,12 @@
+[
+  {
+    "URL": "/test",
+    "METHOD": "get",
+    "BODY": {}
+  },
+  {
+    "URL": "/test",
+    "METHOD": "get",
+    "BODY": {}
+  }
+]

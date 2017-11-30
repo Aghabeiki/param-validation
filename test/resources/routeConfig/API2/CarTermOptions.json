@@ -1,0 +1,10 @@
+{
+  "URL": "/car/terms/",
+  "METHOD": "get",
+  "NAMESPACE": "Returns a list of rental term sections for the specified location.",
+  "BODY": {
+    "locationId": {
+      "type": "string"
+    }
+  }
+}

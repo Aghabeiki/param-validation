@@ -1,0 +1,63 @@
+[
+  {
+    "URL": "/",
+    "METHOD": "post",
+    "QueryParam": {
+      "testInQuery": {
+        "type": "string",
+        "length":2
+      }
+    },
+    "InPath": {
+    },
+    "HEADER": {
+    },
+    "BODY": {
+      "bodyParam": {
+        "type": "string",
+        "length": 4,
+        "required": false
+      }
+    }
+  },
+  {
+    "URL": "(/:testInPath/)",
+    "METHOD": "post",
+    "QueryParam": {
+      "queryParam": {
+        "type": "string"
+      }
+    },
+    "inPath": {
+    },
+    "header": {
+    },
+    "BODY": {
+      "bodyParam": {
+        "type": "string",
+        "length": 2,
+        "required": false
+      }
+    }
+  },
+  {
+    "URL": "/",
+    "METHOD": "get",
+    "QueryParam": {
+      "queryParam": {
+        "type": "string"
+      }
+    },
+    "inPath": {
+    },
+    "header": {
+    },
+    "BODY": {
+      "bodyParam": {
+        "type": "string",
+        "length": 2,
+        "required": false
+      }
+    }
+  }
+]

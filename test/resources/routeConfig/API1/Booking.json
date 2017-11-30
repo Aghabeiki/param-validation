@@ -1,0 +1,12 @@
+[
+  {
+    "URL": "/booking(/:pnr)",
+    "METHOD": "get",
+    "SCRIPT": "./script/Booking.js"
+  },
+  {
+    "URL": "/bookings",
+    "METHOD": "get",
+    "SCRIPT": "./script/Bookings.js"
+  }
+]

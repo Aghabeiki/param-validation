@@ -1,0 +1,22 @@
+[
+  {
+    "URL": "/flight/schedule/:airline_code/:origin/:destination",
+    "METHOD": "get",
+    "SCRIPT": "./script/Flights.schedule.js"
+  },
+  {
+    "URL": "/flight/schedule/:airline_code/:origin/:destination/:departure_month/:departure_day",
+    "METHOD": "get",
+    "SCRIPT": "./script/Flights.schedule.js"
+  },
+  {
+    "URL": "/flight/status",
+    "METHOD": "post",
+    "BODY": {}
+  },
+  {
+    "URL": "/flight/booking/:carrier_code/:pnr",
+    "METHOD": "get",
+    "SCRIPT": "./script/Flights.booking.js"
+  }
+]

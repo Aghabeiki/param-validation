@@ -1,0 +1,6 @@
+{
+  "URL": "/CTA",
+  "METHOD": "get",
+  "NAMESPACE": "get existing CTA(s)",
+  "SCRIPT":"./script/Promotion.CTA.GetCTAList.js"
+}

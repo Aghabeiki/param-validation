@@ -1,0 +1,18 @@
+{
+  "/airlines": {
+    "get": {
+      "TITLE": "Get Airline",
+      "URL": "/airlines",
+      "METHOD": "get",
+      "NAMESPACE": "Get Airline details",
+      "SCRIPT": "./script/Airlines.GetAirline.js"
+    },
+    "post": {
+      "TITLE": "Get All Airlines",
+      "URL": "/airlines",
+      "METHOD": "post",
+      "NAMESPACE": "Get All Airlines",
+      "SCRIPT": "./script/Airlines.GetAllAirlines.js"
+    }
+  }
+}

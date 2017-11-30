@@ -1,0 +1,14 @@
+{
+  "URL": "/promotion",
+  "METHOD": "delete",
+  "NAMESPACE": "delete a promotion",
+  "BODY": {
+    "promotion_ids": {
+      "type": "array|number",
+      "rows": {
+        "type": "number"
+      }
+    }
+  }
+}
+

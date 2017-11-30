@@ -1,0 +1,63 @@
+{
+  "Airlines": [
+    {
+      "TITLE": "Call Center",
+      "URL": "/airlines/:airline_code/callcenter",
+      "METHOD": "GET",
+      "NAMESPACE": "get airline call center",
+      "BODY": {}
+    },
+    {
+      "TITLE": "Get Airline",
+      "URL": "/airlines/:airline_code",
+      "METHOD": "get",
+      "NAMESPACE": "Get Airline details",
+      "BODY": {}
+    },
+    {
+      "TITLE": "Get All Airlines",
+      "URL": "/airlines",
+      "METHOD": "get",
+      "NAMESPACE": "Get All Airlines",
+      "BODY": {}
+    },
+    {
+      "TITLE": "Offices",
+      "URL": "/airlines/:airline_code/office",
+      "METHOD": "GET",
+      "NAMESPACE": "Get Airlines Office Details",
+      "BODY": {}
+    },
+    {
+      "TITLE": "Representative",
+      "URL": "/airlines/:airline_code/representative",
+      "METHOD": "GET",
+      "NAMESPACE": "Get Airline representative details",
+      "BODY": {}
+    }
+  ],
+  "Countries": [
+    {
+      "URL": "/countries",
+      "METHOD": "get",
+      "BODY": {}
+    },
+    {
+      "URL": "/countries/:country_code",
+      "METHOD": "get",
+      "BODY": {}
+    }
+  ],
+  "Currencies": [
+    {
+      "URL": "/currencies",
+      "METHOD": "get",
+      "BODY": {}
+    },
+    {
+      "URL": "/currencies/:currency_code",
+      "METHOD": "get",
+      "BODY": {}
+    }
+  ]
+}

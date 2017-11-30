@@ -1,0 +1,6 @@
+{
+  "URL": "/holidays/:CountryISO/:startYear/:startMonth/:startDay/:endYear/:endMonth/:endDay",
+  "METHOD": "GET",
+  "NAMESPACE": "get Holidays for a specific country ",
+  "SCRIPT": "./script/GetHolidays.js"
+}

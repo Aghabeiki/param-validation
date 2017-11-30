@@ -1,0 +1,11 @@
+{
+  "URL": "/airports(/:country_code)",
+  "METHOD": "GET",
+  "BODY": {
+    "country_code": {
+      "type": "string",
+      "length": 2,
+      "required": false
+    }
+  }
+}

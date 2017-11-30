@@ -1,0 +1,183 @@
+[
+  {
+    "URL": "/pns/booking",
+    "METHOD": "post",
+    "SCRIPT": "./script/PNS.booking.post.js"
+  },
+  {
+    "URL": "/pns/device",
+    "METHOD": "post",
+    "SCRIPT": "./script/PNS.device.post.js"
+  },
+  {
+    "URL": "/pns/device",
+    "METHOD": "put",
+    "SCRIPT": "./script/PNS.device.put.js"
+  },
+  {
+    "URL": "/pns/validator",
+    "METHOD": "post",
+    "BODY": {
+      "pushNotificationRules": {
+        "type": "object",
+        "body": {
+          "priority": {
+            "type": "number",
+            "min": 0,
+            "max": 2
+          },
+          "status": {
+            "type": "number",
+            "min": 0,
+            "max": 1
+          },
+          "name": {
+            "type": "string"
+          },
+          "rules": {
+            "type": "object",
+            "body": {
+            }
+          },
+          "content": {
+            "type": "object",
+            "body": {
+            }
+          },
+          "target-time": {
+            "type": "object",
+            "body": {
+              "start_date": {
+                "type": "date"
+              },
+              "end_date": {
+                "type": "date"
+              },
+              "frequency": {
+                "type": "number",
+                "min": 300
+              },
+              "limit_per_user": {
+                "type": "number",
+                "min": 1
+              },
+              "push_local_time": {
+                "type": "string",
+                "required":false,
+                "regex64":"XigyWzAtM118WzAxXT9bMC05XSk6KFswLTVdezF9WzAtOV0pJA=="
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "URL": "/pns",
+    "METHOD": "post",
+    "BODY": {
+      "pushNotificationRules": {
+        "type": "object",
+        "body": {
+          "priority": {
+            "type": "number",
+            "min": 0,
+            "max": 2
+          },
+          "status": {
+            "type": "number",
+            "min": 0,
+            "max": 1
+          },
+          "name": {
+            "type": "string"
+          },
+          "rules": {
+            "type": "object",
+            "body": {
+            }
+          },
+          "content": {
+            "type": "object",
+            "body": {
+            }
+          },
+          "target-time": {
+            "type": "object",
+            "body": {
+              "start_date": {
+                "type": "date"
+              },
+              "end_date": {
+                "type": "date"
+              },
+              "frequency": {
+                "type": "number",
+                "min": 300
+              },
+              "limit_per_user": {
+                "type": "number",
+                "min": 1
+              },
+              "push_local_time": {
+                "type": "string",
+                "required":false,
+                "regex64":"XigyWzAtM118WzAxXT9bMC05XSk6KFswLTVdezF9WzAtOV0pJA=="
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "URL": "/pns/rules",
+    "METHOD": "get",
+    "BODY": {
+    }
+  },
+  {
+    "URL": "/pns/messages",
+    "METHOD": "get",
+    "BODY": {
+    }
+  },
+  {
+    "URL": "/pns/messages(/:id)",
+    "METHOD": "put",
+    "SCRIPT":"./script/PNS.UpdateMessageStructure.put.js"
+  },
+  {
+    "URL":"/pns/rules(/:id)",
+    "METHOD":"put",
+    "SCRIPT":"./script/PNS.UpdateNotifyRules.put.js"
+  },
+  {
+    "URL": "/pns/rules(/:id)",
+    "METHOD": "delete",
+    "BODY": {
+      "id": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "URL": "/pns/messages(/:id)",
+    "METHOD": "delete",
+    "BODY": {
+      "id": {
+        "type": "string"
+      }
+    }
+  },
+  {
+    "URL":"/pns/messages",
+    "METHOD":"post",
+    "SCRIPT":"./script/PNS.newMessageStructure.new.js"
+  },
+  {
+    "URL":"/pns/rules",
+    "METHOD":"post",
+    "SCRIPT":"./script/PNS.newPushNotifyRule.new.js"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "URL": "/promotion(/:promotionID)",
+  "METHOD": "GET",
+  "NAMESPACE": "get promotion details",
+  "BODY": {
+    "promotionID": {
+      "type": "string"
+    }
+  }
+}

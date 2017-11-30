@@ -1,0 +1,29 @@
+{
+  "URL": "/car/payment",
+  "METHOD": "post",
+  "NAMESPACE": "Make payment for the booking created",
+  "BODY": {
+    "payment": {
+      "paymentId": {
+        "type": "number"
+      },
+      "depositPayment": {
+        "type": "boolean"
+      },
+      "cardNumber": {
+        "type": "string",
+        "minLength": 12,
+        "maxLength": 19
+      },
+      "cvv": {
+        "type": "string"
+      },
+      "expirationDate": {
+        "type": "string"
+      },
+      "cardHolder": {
+        "type": "string"
+      }
+    }
+  }
+}

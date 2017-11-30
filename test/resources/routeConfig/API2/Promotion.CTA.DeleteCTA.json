@@ -1,0 +1,14 @@
+{
+  "URL": "/CTA",
+  "METHOD": "delete",
+  "NAMESPACE": "delete existing CTA(s)",
+  "BODY": {
+    "CTA_ID": {
+      "type": "array",
+      "rows": {
+        "type": "number",
+        "min": 1
+      }
+    }
+  }
+}
