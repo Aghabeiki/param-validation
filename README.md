@@ -1,3 +1,4 @@
+[![Coverage Status](https://coveralls.io/repos/github/RaianRaika/param-validation/badge.svg?branch=master)](https://coveralls.io/github/RaianRaika/param-validation?branch=master)
 # IT's a draft and not finalized yet!.
 
 # param-validation
