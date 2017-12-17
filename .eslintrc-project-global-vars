@@ -1,0 +1,6 @@
+{
+  "globals":{
+  "validateError":true,
+	"should":true
+  }
+}

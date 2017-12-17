@@ -1,7 +1,7 @@
 {
   "URL": "/airports(/:country_code)",
   "METHOD": "GET",
-  "BODY": {
+  "InPath": {
     "country_code": {
       "type": "string",
       "length": 2,

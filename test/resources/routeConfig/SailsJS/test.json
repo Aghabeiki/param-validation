@@ -1,16 +1,23 @@
 [
   {
-    "URL": "/",
+    "URL": "/(:inPathVar)",
     "METHOD": "post",
     "QueryParam": {
       "testInQuery": {
         "type": "string",
-        "length":2
+        "length": 2
       }
     },
     "InPath": {
+      "inPathVar":{
+        "type":"string"
+      }
     },
     "HEADER": {
+      "test": {
+        "type": "string",
+        "length": 4
+      }
     },
     "BODY": {
       "bodyParam": {

@@ -2,38 +2,37 @@
  * Created by roten on 11/20/17.
  */
 
-const should = require('should');
+'use strict';
 
-const Boolean = require('../../../../lib/Helper/DataTypeValidator/Boolean');
+const BooleanDataTypeValidator = require('../../../../lib/Helper/DataTypeValidator/Boolean');
 describe('#DataTypeValidator', () => {
-    "use strict";
-    describe('#boolean', () => {
-        it('-should pass\t valid value', () => {
-            let res = Boolean({
-                type: 'boolean',
+  describe('#boolean', () => {
+    it('-should pass\t valid value', () => {
+      const res = new BooleanDataTypeValidator({
+        type: 'boolean',
 
-            }, true)
-            res.should.have.properties({requiredDataType: 'boolean', dataTypePassed: true, status: true});
-        })
-        it('-should pass\t null value', () => {
-            let res = Boolean({
-                type: 'boolean',
-                'null-allowed': true
+      }, true);
+      res.should.have.properties({requiredDataType: 'boolean', dataTypePassed: true, status: true});
+    });
+    it('-should pass\t null value', () => {
+      const res = new BooleanDataTypeValidator({
+        'type': 'boolean',
+        'null-allowed': true,
 
-            }, null);
-            res.should.have.properties({
-                requiredDataType: 'boolean',
-                dataTypePassed: true,
-                status: true
-            })
-        })
-        it('-should failed an error due invalid date', () => {
-            let res = Boolean(null, true);
-            should(res).have.properties({
-                message: 'Cannot read property \'type\' of null',
-                dataTypePassed: false,
-                status: false
-            });
-        })
-    })
-})
+      }, null);
+      res.should.have.properties({
+        requiredDataType: 'boolean',
+        dataTypePassed: true,
+        status: true,
+      });
+    });
+    it('-should failed an error due invalid date', () => {
+      const res = new BooleanDataTypeValidator(null, true);
+      should(res).have.properties({
+        message: 'Cannot read property \'type\' of null',
+        dataTypePassed: false,
+        status: false,
+      });
+    });
+  });
+});

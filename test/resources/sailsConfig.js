@@ -1,69 +1,72 @@
 /**
  * Created by roten on 11/19/17.
  */
+'use strict';
 
-let ParamValidator = require('../../index').Middelware.SailsJS;
+const ParamValidator = require('../../index').Middelware.SailsJS;
 
 module.exports = {
-    log: {
-        level: 'silent'
+  log: {
+    level: 'silent',
+  },
+  models: {
+    connection: 'test',
+    migrate: 'drop',
+  },
+  connection: {
+    test: {
+      adapter: 'sails-memory',
     },
-    models: {
-        connection: 'test',
-        migrate: 'drop'
+  },
+  routes: {
+    '/:inPathVar': (req, res) => { // eslint-disable-lint valid-jsdoc
+      res.send('ok');
     },
-    connection: {
-        test: {
-            adapter: 'sails-memory'
-        },
+    'get /test': (req, res) => { // eslint-disable-lint valid-jsdoc
+      res.send('ok');
     },
-    routes: {
-        '/': (req, res) => {
-            res.send('ok');
-        }
 
-    },
-    http: {
+  },
+  http: {
 
-        middleware: {
+    middleware: {
 
-            order: [
-                'cookieParser',
-                'session',
-                'bodyParser',
-                'compress',
-                'poweredBy',
-                '$custom',
-                'paramValidator',
-                'router',
-                'www',
-                'favicon',
-                '404',
-                '500'
-            ],
-            /****************************************************************************
+      order: [
+        'cookieParser',
+        'session',
+        'bodyParser',
+        'compress',
+        'poweredBy',
+        '$custom',
+        'paramValidator',
+        'router',
+        'www',
+        'favicon',
+        '404',
+        '500',
+      ],
+      /** **************************************************************************
              *                                                                           *
              * Param Validator                                                           *
              *                                                                           *
              ****************************************************************************/
-            paramValidator: function (req, res, next) {
-
-                try {
-                    let paramValidator = new ParamValidator(sails, {
-                        projectBaseDIR: __dirname,
-                        routeConfig: 'routeConfig/SailsJS',
-                        scriptValidatorPath: 'routeConfig/SailsJS/script',
-                        excludePrefix: null
-                    });
-                    paramValidator.validator(req, res, next);
-                }
-                catch (e) {
-                    console.log(e.message);
-                    next();
-                }
-
-            },
+      /* eslint-disable valid-jsdoc */
+      paramValidator: function(req, res, next) {
+        /* eslint-disable valid-jsdoc */
+        try {
+          const paramValidator = new ParamValidator(sails, { // eslint-disable-line no-undef
+            projectBaseDIR: __dirname,
+            routeConfig: 'routeConfig/SailsJS',
+            scriptValidatorPath: 'routeConfig/SailsJS/script',
+            excludePrefix: '^\\/test\\/*',
+          });
+          paramValidator.validator(req, res, next);
+        } catch (e) {
+          // todo replace with ParamValidator Logger, console.log(e.message);
+          next();
         }
-    }
-}
+      },
+    },
+  },
+};
 

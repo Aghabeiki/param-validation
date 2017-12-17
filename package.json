@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha  test/unit/**/**/**/**/*.test.js",
-    "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly --reporter spec --check-leaks --no-exit test/unit/**/**/**/**/*.test.js",
-    "cover": "./node_modules/.bin/nyc --all --reporter=lcov npm test"
+    "eslint": "eslint --ignore-path .gitignore .",
+    "pretest": "npm run eslint",
+    "test": "./node_modules/.bin/mocha test/bootstrap.test.js test/unit/**/**/**/**/*.test.js",
+    "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly --reporter spec --check-leaks --no-exit test/bootstrap.test.js test/unit/**/**/**/**/*.test.js",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha --reporter dot --check-leaks --no-exit test/bootstrap.test.js test/unit/**/**/**/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,8 @@
   },
   "homepage": "https://github.com/RaianRaika/param-validation#readme",
   "devDependencies": {
+    "eslint": "4.13.1",
+    "eslint-config-google": "0.9.1",
     "istanbul": "0.4.5",
     "mocha": "4.0.1",
     "nyc": "11.3.0",
@@ -34,6 +38,7 @@
     "supertest": "3.0.0"
   },
   "dependencies": {
+    "get-routes": "^0.2.0",
     "google-libphonenumber": "3.0.8",
     "lodash": "4.17.4",
     "url-pattern": "1.0.3"
