@@ -1,7 +1,7 @@
 'use strict';
 
 const PVError = require('../../../../lib/Error/index');
-const BaseInterface = require('../../../../lib/Middelware/BaseMiddelware/BaseInterface');
+const BaseValidator = require('../../../../lib/Middelware/BaseMiddelware');
 const path = require('path');
 describe('#Middleware\t BaseValidator', () => {
   let baseValidator = null;
@@ -10,7 +10,7 @@ describe('#Middleware\t BaseValidator', () => {
     /**
      * @description a mocked validatior
      */
-    class MockValidator extends BaseInterface {
+    class MockValidator extends BaseValidator {
       /**
        *  @description mocked load App Route Config.
        * @return {{}}
@@ -78,9 +78,9 @@ describe('#Middleware\t BaseValidator', () => {
     });
   });
 
-  // todo fix this test.
-  /* it('-should pass\t execute ruleExecutor.', () => {
+  it('-should pass\t execute ruleExecutor.', () => {
     const rule = baseValidator.findRule('/airports(/:country_code)', 'get');
-    baseValidator.ruleExecutor(rule, {country_code: 'IR'});
-  });*/
+    rule.should.have.property('InPath');
+    baseValidator.ruleExecutor(rule.InPath, {country_code: 'IR'}).should.be.ok();
+  });
 });

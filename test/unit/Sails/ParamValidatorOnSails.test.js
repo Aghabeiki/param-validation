@@ -22,10 +22,10 @@ describe('#Param Validator on Sails.', () => {
   });
   it('-Param Checking \t thought param validator. ', (done) => {
     request(sails.hooks.http.app)
-      .post('/inPathParam/?testInQuery=12')
+      .post('/inPathParam/?queryParam=12')
       .set({test: 'test'})
       .send({
-        bodyParam: 'test',
+        bodyParam: 'IR',
       })
       .expect(200)
       .then((response) => {
@@ -130,11 +130,11 @@ describe('#Param Validator on Sails.', () => {
     };
     const testRequestParser = new SailsInterface(sails, config);
     const requestInfo = testRequestParser.requestParser({
-      method: 'get',
+      method: 'post',
       url: '/test?test=test',
     });
     requestInfo.url.should.be.eql('/test');
-    requestInfo.method.should.be.eql('get');
+    requestInfo.method.should.be.eql('post');
     requestInfo.ruleKey.should.be.eql('/(:inpathvar)');
     should(requestInfo.params.headers).be.null();
     should(requestInfo.params.body).be.null();

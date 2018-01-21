@@ -1,25 +1,22 @@
 {
   "name": "param-validation",
-  "version": "0.0.0",
-  "description": "",
+  "version": "1.0.0",
+  "description": "A middelware param validator for Node.js Web App/ REST API",
   "main": "index.js",
   "scripts": {
     "eslint": "eslint --ignore-path .gitignore .",
     "pretest": "npm run eslint",
-    "test": "./node_modules/.bin/mocha test/bootstrap.test.js test/unit/**/**/**/**/*.test.js",
+    "test": "mocha test/bootstrap.test.js test/unit/**/**/**/**/*.test.js",
     "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly --reporter spec --check-leaks --no-exit test/bootstrap.test.js test/unit/**/**/**/**/*.test.js",
     "test-cov": "istanbul cover node_modules/mocha/bin/_mocha --reporter dot --check-leaks --no-exit test/bootstrap.test.js test/unit/**/**/**/**/*.test.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RaianRaika/param-validation"
+    "url": "git+https://github.com/RaianRaika/param-validation.git"
   },
   "author": "Amin.Aghabeiki",
   "contributors": [
-    {
-      "name": "Amin Aghabeiki",
-      "email": "amin.aghabeiki@gmail.com"
-    }
+    "Amin Aghabeiki <amin.aghabeiki@gmail.com>"
   ],
   "license": "MIT",
   "bugs": {
@@ -38,9 +35,23 @@
     "supertest": "3.0.0"
   },
   "dependencies": {
-    "get-routes": "^0.2.0",
+    "get-routes": "0.2.0",
     "google-libphonenumber": "3.0.8",
     "lodash": "4.17.4",
     "url-pattern": "1.0.3"
-  }
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "keywords": [
+    "Node.js",
+    "Express.JS",
+    "Sails.JS",
+    "WebApp",
+    "RestAPI",
+    "param-validator",
+    "param-validation",
+    "middel-ware"
+  ]
 }
