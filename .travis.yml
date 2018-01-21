@@ -1,20 +1,22 @@
 language: node_js
 node_js:
-  - "8.9.1"
+- 8.9.1
 sudo: false
 cache:
   directories:
-    - node_modules
+  - node_modules
 before_install:
-  # Skip updating shrinkwrap / lock
-  - "npm config set shrinkwrap false"
-
-  # Remove all non-test dependencies
-  - "npm rm --save-dev connect-redis"
-
-  # Update Node.js modules
-  - "test ! -d node_modules || npm prune"
-  - "test ! -d node_modules || npm rebuild"
+- npm config set shrinkwrap false
+- npm rm --save-dev connect-redis
+- test ! -d node_modules || npm prune
+- test ! -d node_modules || npm rebuild
 script:
-  - "npm run test-ci"
-after_script: "npm install coveralls@2.10.0 && cat ./coverage/lcov.info | coveralls"
+- npm run test-ci
+after_script: npm install coveralls@2.10.0 && cat ./coverage/lcov.info | coveralls
+deploy:
+  provider: npm
+  email: amin.aghabeiki@gmail.com
+  api_key:
+    secure: NRulqs2KZmJPMkuZN7Gfy06c3ZN1FExLPWq2Y/0sbxlHo24prmN7M3Ur/aDIlkyPQTpiyBRTbn0sbFEc0TKCwpobFgllA0kOJMNVE+Sj0zs/lzcpjp5tzcDZCvNC2DLiHd9Wbn+Z+rS+UKpasGp88Y9gSMORt5sWk+VWYx9BVTNExbw+JIVLRHjjY8TBCUwz4hS9trt4bnlv/cXe1ZUjrJ50wEUk8urJpIkmeIXD/mhlEHTrHQanEfwdLvimVuzBZc0uGVTeRG2x69PqcFsah4cBmQcVGSsEk5Ej9SDaoKIRN6a370K268WR5dcPW9ahGkY9dT/9erSXh3Abqbwq1ITgfhzR0oPw1VD/p8xhl6DIIt9xOGWvHj+51P7hYoM1pi/lN64aREIunAS50WUd/hcXMrT+PCzPq5HKODAXbB4rLDURzLeZqasi7gaQg6mT79Jalrr1IrRJ72aohFhstGPwit7rwciQzkm7NNlzfVjJ0Qt+vIIF2pREB2fqkitXnhdsNB6Sz/b+vfU9zQLOZk5og4cdUHc5qaHdhrnjcaIklyhlFmTy4Pna8+vjilS+mT5y2cLeDUmSc/DU/8mi3IL3dqL5oLKnHwZEIHqGMgXtX9et0EpFXmS4YC6BuerOvo2wAIlo4R+2hWCHOLa5+kDhFH+itycEsc7mxuV4B9o=
+  on:
+    tags: true
