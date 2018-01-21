@@ -1,6 +1,5 @@
 [![Coverage Status](https://coveralls.io/repos/github/RaianRaika/param-validation/badge.svg?branch=master)](https://coveralls.io/github/RaianRaika/param-validation?branch=master)
 [![Build Status](https://travis-ci.org/RaianRaika/param-validation.svg?branch=master)](https://travis-ci.org/RaianRaika/param-validation)
-# IT's a draft and not finalized yet!.
 
 # param-validation
 
