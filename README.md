@@ -6,12 +6,11 @@
 A general param schema validation middle-ware.
 
 Supported Framework:
-* Sails.JS    
+* Sails.js    
+* Express.js
 
 
 
-**Note**: \
-***This project is under heavy developments.***
 ### Installing
 
 Install node module
