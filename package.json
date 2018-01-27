@@ -1,6 +1,6 @@
 {
   "name": "param-validation",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A middelware param validator for Node.js Web App/ REST API",
   "main": "index.js",
   "scripts": {

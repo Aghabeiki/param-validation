@@ -18,6 +18,9 @@ module.exports = {
       adapter: 'sails-memory',
     },
   },
+  hooks: {
+    grunt: false,
+  },
   routes: {
     '/:inPathVar': (req, res) => { // eslint-disable-lint valid-jsdoc
       res.send('ok');

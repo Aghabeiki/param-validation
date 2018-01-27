@@ -13,6 +13,7 @@ const path = require('path');
 
 describe('#Param Validator on Sails.', () => {
   before(function(done) {
+    this.timeout(7000); // eslint-disable-line  no-invalid-this
     sails.lift(config, function(err) {
       if (err) {
         return done(err);
