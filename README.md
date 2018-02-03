@@ -6,7 +6,7 @@
 A general param schema validation middle-ware.
 
 Supported Framework:
-* Sails.js    
+* Sails.js
 * Express.js
 
 
@@ -75,21 +75,26 @@ Create a config file under Config folder with any name and put this content on i
  ###### Validation config
  * **Any param scope** : In this method, you can define a JSON file to validate your param automatically
  	* Independent properties
- 		* `type` : number, date, string, array, object, email, phone, boolean`
+ 		* `type` : number, date, string, array, object, email, phone, boolean, Enum, Func`
  			*  Multi data type could assign to a param with separator `|`
+ 			*  Only number, date, string email, phone, boolean could define in multi type data.
  		* `required`: define the param is required or not,default value is true
     * Depend properties
     	* type `number`
     		* min :  minimum acceptable value
     		* max :  maximum acceptable value
-        * type `string`
-        	* minLength : minimum acceptable length of string
-        	* maxLength : maximum acceptable length of string
-        	* length : acceptable length of string
-      	* type `array`
-      		* rows: in the rows we can define the param and flow the validation config as well.
-        * type `object`
-        	* body: the properties of the JSON Object and can use all the validation config as well.
+      * type `string`
+        * minLength : minimum acceptable length of string
+        * maxLength : maximum acceptable length of string
+        * length : acceptable length of string
+      * type `array`
+        * rows: in the rows we can define the param and flow the validation config as well.
+      * type `object`
+        * body: the properties of the JSON Object and can use all the validation config as well.
+      * type `Enum`
+        * values: An array of the possible value that allowed.
+      * type 'Func'
+        * functionBody: is a inline function that will run on your value, this function should have one value and return true or false
 
  	* Addition operation
  		* `compareWithFiled` :  compare one pram with another ones
