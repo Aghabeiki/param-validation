@@ -1,6 +1,6 @@
 {
   "name": "param-validation",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A middelware param validator for Node.js Web App/ REST API",
   "main": "index.js",
   "scripts": {
@@ -37,6 +37,7 @@
   "dependencies": {
     "get-routes": "0.2.0",
     "google-libphonenumber": "3.0.8",
+    "imei": "0.0.1",
     "lodash": "4.17.4",
     "url-pattern": "1.0.3"
   },

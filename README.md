@@ -75,9 +75,9 @@ Create a config file under Config folder with any name and put this content on i
  ###### Validation config
  * **Any param scope** : In this method, you can define a JSON file to validate your param automatically
  	* Independent properties
- 		* `type` : number, date, string, array, object, email, phone, boolean, Enum, Func`
+ 		* `type` : possible value `number`, `date`, `string`, `array`, `object`, `email`, `phone`, `boolean`, `Enum`, `IMEI`
  			*  Multi data type could assign to a param with separator `|`
- 			*  Only number, date, string email, phone, boolean could define in multi type data.
+ 			*  Only `number`, `date`, `string`, `email`, `phone`, `boolean`, `IMEI`  could define in multi type data.
  		* `required`: define the param is required or not,default value is true
     * Depend properties
     	* type `number`
@@ -93,8 +93,6 @@ Create a config file under Config folder with any name and put this content on i
         * body: the properties of the JSON Object and can use all the validation config as well.
       * type `Enum`
         * values: An array of the possible value that allowed.
-      * type 'Func'
-        * functionBody: is a inline function that will run on your value, this function should have one value and return true or false
 
  	* Addition operation
  		* `compareWithFiled` :  compare one pram with another ones
